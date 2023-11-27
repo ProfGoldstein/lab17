@@ -1,0 +1,23 @@
+zone "xxx.cs" {      # Zone File for CSIS400 subdomain xxx.cs
+	type master;
+	file "/etc/bind/zones/db.xxx.cs";	# Zone file path
+	allow-transfer { localnets; } ;		# Allow transfers from any local host
+};
+
+zone "cs" {      # Zone File for CSIS400 cs tld
+	type slave;
+	file "/etc/bind/slaves/slave.cs";	# Zone file path
+	masterfile-format text;
+	masters { 172.24.1.1; } ;
+};
+
+
+
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+

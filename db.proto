@@ -1,0 +1,20 @@
+;
+; BIND data file for prototype. Need To Edit!
+;
+$TTL	86500
+@	IN	SOA	localhost. root.localhost.  (
+		     1999123101      ; Serial YYYYMMDDxx
+                          86500      ; refresh (~1 day)
+                           3600      ; retry (1 hour)
+                        2500000      ; expire (~4 weeks)
+                          86500 )    ; minimum (~1 day)
+                           
+; Primary Domain Name Servers
+			IN	NS	ns1.cs.
+
+; A records for the above servers
+ns1.cs.			IN	A	172.24.1.1
+
+; Other host A records
+test			IN	A	172.24.100.253
+
